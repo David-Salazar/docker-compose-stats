@@ -1,0 +1,4 @@
+pandas
+voila-gridstack
+matplotlib
+seaborn
