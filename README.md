@@ -6,11 +6,18 @@ the containers' names.
 
 ## Installation
 
-Once you have installed docker and cloned the repository, run the following commands:
+This project uses conda as a package manager. Therefore, once you have cloned the repository, run the following commands to install 
+the required packages for this application in a separate conda environment:
 
 ```
-docker build -t docker-stats . 
-docker container run docker-stats
+conda env create -f environment.yml
+conda activate docker-stats
+```
+
+Each time you want to run the dashboard, you'll have to activate the conda environment. Finally, launch the dashboard thus:
+
+```
+voila user_interface.ipynb
 ```
 
 Finally, to see the live dashboard go to [http://localhost:8866/
