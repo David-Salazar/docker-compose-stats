@@ -12,12 +12,11 @@ def percentage_string_to_number(x):
 def plot_area(variable, ax, to_show, title):
     to_show.pivot(index="time", columns="name", values=variable).plot.area(ax=ax)
     ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1))
-    ax.set_ylim([0, 1])
     ax.set_title(title + str(datetime.now())) 
 
 def run_and_get_docker_stats():
     stream = os.popen(
-        'docker stats --no-stream --format "{{ .Container }}, {{ .Name }}, {{ .MemUsage }}, {{ .MemPerc }}, {{ .CPUPerc }}, {{.NetIO}}" | tee')
+        'sudo docker stats --no-stream --format "{{ .Container }}, {{ .Name }}, {{ .MemUsage }}, {{ .MemPerc }}, {{ .CPUPerc }}, {{.NetIO}}" | tee')
     output = stream.read()
     return output
 
