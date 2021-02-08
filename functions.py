@@ -16,7 +16,7 @@ def plot_area(variable, ax, to_show, title):
 
 def run_and_get_docker_stats():
     stream = os.popen(
-        'sudo docker stats --no-stream --format "{{ .Container }}, {{ .Name }}, {{ .MemUsage }}, {{ .MemPerc }}, {{ .CPUPerc }}, {{.NetIO}}" | tee')
+        'docker stats --no-stream --format "{{ .Container }}, {{ .Name }}, {{ .MemUsage }}, {{ .MemPerc }}, {{ .CPUPerc }}, {{.NetIO}}" | tee')
     output = stream.read()
     return output
 
